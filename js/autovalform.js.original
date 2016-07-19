@@ -1,0 +1,217 @@
+function isRequired(obj) {
+	document.getElementById('info').innerHTML = "";
+	
+	for(var i=0;i<obj.elements.length;i++) {
+		var objtype = obj.elements[i].type;
+
+		// routine for all types of form elements except radio
+		switch(objtype) {
+			case 'select-one':
+				isSelected(obj.elements[i].selectedIndex);
+				break;
+			case 'select-multiple':
+				isSelectedMultiple(obj.elements[i].selectedIndex);
+				break;
+			case 'text':			 
+					if(obj.elements[i].name == "email") {
+						isEmail(obj.elements[i].value);
+					} else if(obj.elements[i].name == "numeric") {
+						isNumeric(obj.elements[i].value);
+					} else if(obj.elements[i].name == "postcode") {
+						isPostalCode(obj.elements[i].value);
+					} else if(obj.elements[i].name == "textfield") {
+						isTextfield(obj.elements[i].value);
+					}
+				break;
+			case 'textarea':
+				isTextarea(obj.elements[i].value);
+				break;
+			case 'checkbox':
+				isCheckbox(obj.elements[i].checked);					
+				break;
+		}
+	}
+	// special routine for radio buttons
+	for(var i=0;i<obj.elements.length;i++) {
+		var objtype = obj.elements[i].type;
+
+		if(objtype == 'radio') {
+			var radioarr = new Array();
+			radioarr[i] = obj.elements[i].checked;	
+			
+			if(radioarr[i] == true 
+				&& [i] == radioarr.length-1 
+				&& radioarr.length-1 != 'undefined') {
+				return true;
+			} else if(radioarr[i] == false 
+				&& [i] == radioarr.length-1 
+				&& radioarr.length-1 != 'undefined'){
+				var errorval = 0;						
+			}								
+		}		
+	}
+	if(errorval == 0) {
+		isRadio(radioarr[i]);
+	}
+}
+
+function isEmail(obj) {
+	if(obj.indexOf('@') == '-1'
+		|| obj.indexOf('.') == '-1') {
+		// input not correct		
+		validateRequired(1);
+	} else {
+		// input correct
+		validateRequired(0);
+	}
+}
+
+function isNumeric(obj) {
+	var numint = parseInt(obj);
+	if(isNaN(numint) == true) {
+		// input not correct		
+		validateRequired(2);		
+	} else {
+		// input correct
+		validateRequired(0);
+	}
+}
+
+function isRadio(obj) {
+	if(obj) {
+		// input correct
+		return true;
+	} else {
+		// input not correct
+		validateRequired(3);
+	}
+}
+
+function isSelected(obj) {
+	if(obj == '0') {
+		// input not correct		
+		validateRequired(4);
+	} else {
+		// input correct
+		validateRequired(0);
+	}
+}
+
+function isSelectedMultiple(obj) {
+	if(obj == '-1') {
+		// input not correct		
+		validateRequired(7);
+	} else {
+		// input correct
+		validateRequired(0);
+	}
+}
+
+function isPostalCode(obj) {
+	var numint = parseInt(obj);
+	if(isNaN(numint) == true 
+		|| obj.length < 4
+		|| obj.length > 4) {
+		// input not correct
+		validateRequired(5);
+	} else {
+		// input correct
+		validateRequired(0);
+	}
+}
+
+function isCheckbox(obj) {
+	if(obj) {
+		// input correct		
+		validateRequired(0);
+	} else {
+		// input not correct
+		validateRequired(6);
+	}
+}
+
+function isTextarea(obj) {
+	if(obj != '') {
+		// input correct		
+		validateRequired(0);
+	} else {
+		// input not correct
+		validateRequired(8);
+	}
+}
+
+function isTextfield(obj) {
+	if(obj != '') {
+		// input correct		
+		validateRequired(0);
+	} else {
+		// input not correct
+		validateRequired(9);
+	}
+}
+
+// error messages
+var validationErrorMessage = new Object();
+validationErrorMessage['numeric'] = 'Numeric field requires a number.<br/>';
+validationErrorMessage['postcode'] = 'Postal code field must hold a Zip code with 4 numbers.<br/>';
+validationErrorMessage['email'] = 'Correct email address is required.<br/>';
+validationErrorMessage['select-one'] = 'Select one dropdown option.<br/>';
+validationErrorMessage['select-multiple'] = 'Select one ore more dropdown options.<br/>';
+validationErrorMessage['radio'] = 'Select at least one radio option.<br/>';
+validationErrorMessage['checkbox'] = 'Select checkbox option.<br/>';
+validationErrorMessage['textarea'] = 'Fill out message field.<br/>';
+validationErrorMessage['textfield'] = 'Fill out text field.<br/>';
+
+function validateRequired(nr) {
+	var nrval = nr;
+	var infobj = document.getElementById('info');
+	var tmpval;
+
+	if(nrval != 0) {
+		switch(nrval) {
+			case 1:			
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['email'];
+				break;
+			case 2:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['numeric'];
+				break;
+			case 3:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['radio'];
+				break;
+			case 4:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['select-one'];
+				break;
+			case 5:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['postcode'];
+				break;
+			case 6:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['checkbox'];
+				break;
+			case 7:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['select-multiple'];
+				break;
+			case 8:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['textarea'];
+				break;
+			case 9:
+				infobj.style.visibility = "visible"; 
+				infobj.innerHTML += validationErrorMessage['textfield'];
+				break;
+			default:
+				infobj.style.visibility = "hidden";
+				infobj.innerHTML = '';
+		}
+	}	
+}
+
+function resetForm() {
+	document.getElementById('info').innerHTML = "";
+}

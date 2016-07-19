@@ -1,0 +1,11 @@
+
+rss {font-family:Verdana;font-size:0.7em;line-height:130%;margin:1em;}
+channel title {	display:block;padding:0.4em 0.2em;font-weight:bold;color:#FFF;border-bottom:1px solid #000;font-size:140%; background-color#4483C7;}
+channel description { display:block;float:left;font-size:130%;margin:0.5em;}
+channel item {background-color:#0074d4;border:1px solid #0074D4;clear:both;display:block;font-size:110%;font-weight:bold;margin:1;padding:0 0 0.5em;border-bottom-color:#FFF;border-bottom-style:dashed;}
+channel item title {background-color:#0074D4;border-bottom-width:0;color:#FFF;display:block;font-size:110%;font-weight:bold;margin:0;padding:0.3em 0.5em;}
+channel item category {display:block;color:#FFE505;}
+channel item description { display:block;color:#000;text-align:left;float:none;font-size:100%;background-color:ghostwhite;font-weight:normal;margin:0;padding:0.3em 0.5em;}
+channel item link { color:#D4D4D4;display:block;font-size:85%;padding:0 0.5em;}
+channel item pubDate { color:#FFF;display:block;font-size:80%;padding:0 0.5em;text-align:right;}
+

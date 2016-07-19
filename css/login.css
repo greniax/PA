@@ -1,0 +1,23 @@
+.login {
+	font-size:14px;
+	color:#8E8D8D;
+	font-family:"Droid Sans";
+	padding:11px 15px 10px 50px;
+	width: 255px;
+	display: block;
+	border: 1px solid #8E8D8D;
+	margin:13px 0 -3px 0;
+	webkit border radius: 3px;
+	moz border radius: 3px;
+	border-radius: 3px;
+	box-shadow:inset 2px 2px 4px #F1F1F1;
+	}
+.user {
+	background: url(img/user.png) no-repeat;
+	}
+
+.passwd {
+	  background: url(img/password.png) no-repeat;
+  	}
+.loginfail { color:red;}
+#Login-img { margin:0px 0px 0px 0px;}
