@@ -4,7 +4,10 @@
 
 	define ('PA_APPNAME','WPA');
 	define ('PA_APPDESCRIPTION','Plan de Correcciones, Acciones Correctivas y Preventivas');
-	define ('PA_APPVERSION','0.0.1');
+	define ('PA_APPVERSION','0.0.2');
+	define ('PA_APPURL', 'http://10.7.18.8'); 	// URL del servidor
+	define ('PA_APPOWNER', 'Imperio Automotriz de Veracruz'); // Nombre de la empresa
+
 
 
 	define ('PA_WEBDENEGADO','login.php');
@@ -92,7 +95,7 @@
 
 	
 
-	$footer = "<div id=\"footer\">\n\t<p> copyleft &copy;2014 Depto Sistemas - <a href=\"http://10.7.18.5\">Imperio Automotriz de Veracruz </a></p>\n</div>";
+	$footer = "<div id=\"footer\">\n\t<p> copyleft &copy;2016 Depto Sistemas - <a href=\"".PA_APPURL."\">".PA_APPOWNER." </a></p>\n</div>";
 
 
 @require("tools/xajax/xajax_core/xajax.inc.php");
@@ -410,11 +413,7 @@ include ('class.db.php');
 			$(id).style.display ='none';
 		}
 	</script>
-<?php /*
-<a href="#" onclick="show('popup1')">popup</a>
-	<div class="popup" id="popup1"> <a href="#" onclick="hide('popup1')">cerrar</a></div>
- */ ?>
- 
+
 <?php echo $footer; ?>
 
 </BODY>

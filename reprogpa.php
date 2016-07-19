@@ -51,7 +51,7 @@
 		$htmlOutPut.='<tr><td style="background:#CDCDCD;"><b>Fecha de Reprogramación</b></td><td style="background:#E6E6E6;">'.$pa_fechareprog.'</td></tr>';
 		$htmlOutPut.='<tr><td style="background:#CDCDCD;"><b></b></td><td style="background:#E6E6E6;"></td></tr>';
 		$htmlOutPut.='</table><br />';
-		$htmlOutPut.='<hr><center> <b>- WPA -</b><br /><pre>Imperio Automotriz de Veracruz </pre></center> '."\n";
+		$htmlOutPut.='<hr><center> <b>- WPA -</b><br /><pre> '.PA_APPURL.' </pre></center> '."\n";
 
 // Pear Mail Library
 	require "tools/Mail/PHPMailerAutoload.php";

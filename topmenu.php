@@ -18,7 +18,7 @@
 		$menu.= "<span id=\"UrlHome\" class=\"urlmenu\"><a href=\"dashboard.php\"> Dashboard <i class=\"fa fa-dashboard fa-2x fa-fw\"></i></a></span>\n";
 		$menu.= "<span id=\"UrlLista\" class=\"urlmenu\"><i class=\"fa fa-search fa-2x fa-fw\"></i><a href=\"consulta.php\"> Consulta</a></span>\n";
 		$menu.= "<span id=\"UrlNew\" class=\"urlmenu\"><i class=\"fa fa-edit fa-2x fa-fw\"></i><a href=\"pa.php?new\"> Nuevo </a></span>\n";
-		$menu.= "<span id=\"UrlCal\" class=\"urlmenu\"><i class=\"fa fa-calendar fa-2x fa-fw\"></i><a href=\"calendar.php\"> Calendario</a></span>\n";
+	#	$menu.= "<span id=\"UrlCal\" class=\"urlmenu\"><i class=\"fa fa-calendar fa-2x fa-fw\"></i><a href=\"calendar.php\"> Calendario</a></span>\n";
 		$menu.= "<span id=\"UrlLogOut\" class=\"urlmenu\"><i class=\"fa fa-power-off fa-fw fa-2x\"></i><a href=\"logout.php\"> Salir</a></span>\n";
 	$menu.= "</div>\n";
 
@@ -33,10 +33,8 @@
 		$menu.= "</div>\n";
 		$menu.= "<div id=\"menuline\">\n\t";
 		$menu.= "<span id=\"UrlMenu\"><i class=\"fa fa-home fa-2x fa-fw\"></i> Inicio </span>\n";
-	#	$menu.= "<span id=\"UrlHome\" class=\"urlmenu\"><a href=\"dashboard.php\"> Dashboard <i class=\"fa fa-dashboard fa-2x fa-fw\"></i></a></span>\n";
 		$menu.= "<span id=\"UrlLista\" class=\"urlmenu\"><i class=\"fa fa-list fa-2x fa-fw\"></i><a href=\"".PA_WEBLISTPA."\"> Lista </a></span>\n";
-	#	$menu.= "<span id=\"UrlNew\" class=\"urlmenu\"><i class=\"fa fa-edit fa-2x fa-fw\"></i><a href=\"pa.php?new\"> Nueva </a></span>\n";
-		$menu.= "<span id=\"UrlCal\" class=\"urlmenu\"><i class=\"fa fa-calendar fa-2x fa-fw\"></i><a href=\"calendar.php\"> Calendario </a></span>\n";
+	#	$menu.= "<span id=\"UrlCal\" class=\"urlmenu\"><i class=\"fa fa-calendar fa-2x fa-fw\"></i><a href=\"calendar.php\"> Calendario </a></span>\n";
 		$menu.= "<span id=\"UrlLogOut\" class=\"urlmenu\"><i class=\"fa fa-power-off fa-fw fa-2x\"></i><a href=\"logout.php\"> Salir </a></span>\n";
 	$menu.= "</div>\n";
 	}

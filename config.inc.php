@@ -3,8 +3,10 @@
 	define ('PA_APPNAME','WPA');
 	define ('PA_APPDESCRIPTION','Plan de Correcciones, Acciones Correctivas y Preventivas');
 	define ('PA_APPVERSION','0.0.2');
+	define ('PA_APPURL', 'http://10.7.18.8'); 	// URL del servidor
+	define ('PA_APPOWNER', 'Imperio Automotriz de Veracruz'); // Nombre de la empresa
 
-
+	// NO MODIFICAR
 	define ('PA_WEBDENEGADO','login.php');
 	define ('PA_WEBLOGIN','login.php');
 	define ('PA_WEBLOGOUT','logout.php');
